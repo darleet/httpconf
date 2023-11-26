@@ -1,0 +1,28 @@
+### Go template
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test data
+testdata
+
+# Test binary, built with `go test -c`
+*.test
+
+# Test coverage profiles
+*.cov
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
+go.work
+
+### GoLand
+.idea
+
+### Other
+.env
