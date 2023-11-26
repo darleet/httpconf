@@ -7,6 +7,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Config represents .yaml config file structure
 type Config struct {
 	Server struct {
 		Host    string `yaml:"host"`
@@ -19,6 +20,10 @@ type Config struct {
 	} `yaml:"server"`
 }
 
+// GetConfig loads config from .yaml (.yml) file into structure.
+// Name of .yaml config file should be provided in arguments, if
+// file neither exists nor is available to be read from - an error
+// is returned.
 func GetConfig(fileName string) (*Config, error) {
 	f, err := os.Open(fileName)
 	if err != nil {
