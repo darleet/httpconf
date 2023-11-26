@@ -1,0 +1,7 @@
+server:
+  host: localhost
+  port: 8080
+  timeout:
+    write: 60s
+    read: 60s
+    idle: 5m
