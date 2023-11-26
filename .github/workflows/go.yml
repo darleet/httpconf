@@ -19,7 +19,6 @@ jobs:
           go-version: 'stable'
 
       - name: Build
-        working-directory: ./homework
         run: |
           go mod tidy
           go build -v ./...
@@ -28,10 +27,8 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           version: latest
-          working-directory: ./homework
 
       - name: Unit tests
-        working-directory: ./homework
         run: |
           go mod tidy
           go test ./... -v -race -coverpkg=./...
