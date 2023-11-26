@@ -8,7 +8,7 @@ import (
 )
 
 func TestGetConfig(t *testing.T) {
-	expected := &ServerConfig{}
+	expected := &Config{}
 	expected.Server.Host = "localhost"
 	expected.Server.Port = "8080"
 	expected.Server.Timeout.Write = time.Minute

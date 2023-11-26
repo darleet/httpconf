@@ -7,7 +7,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-type ServerConfig struct {
+type Config struct {
 	Server struct {
 		Host    string `yaml:"host"`
 		Port    string `yaml:"port"`
@@ -19,14 +19,14 @@ type ServerConfig struct {
 	} `yaml:"server"`
 }
 
-func GetConfig(fileName string) (*ServerConfig, error) {
+func GetConfig(fileName string) (*Config, error) {
 	f, err := os.Open(fileName)
 	if err != nil {
 		return nil, err
 	}
 	defer f.Close()
 
-	var conf ServerConfig
+	var conf Config
 	d := yaml.NewDecoder(f)
 	if err := d.Decode(&conf); err != nil {
 		return nil, err
